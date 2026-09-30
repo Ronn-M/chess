@@ -1,0 +1,35 @@
+MDScreen:
+	id: "start_manu"
+	name: "start_manu"
+
+	md_bg_color: '#344c4D'
+	
+	MDRelativeLayout:
+
+		size_hint: 1.03, 1.03
+		pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+		Image:
+			id:  startgame
+			name: "Start Game"
+
+			size_hint: 1, 1 
+			size: self.texture_size
+			source: 'img_data/logo2.png'
+			pos_hint: {"center_x": 0.5, "center_y": 0.52}
+
+			on_touch_down: app.player_select()
+	
+		MDLabel: 
+			
+			size_hint: 1.03, 0.05
+			pos_hint: {"center_x": 0.5, "center_y": 0.04}
+
+			font_size: '28sp'
+			halign: 'center'
+			color: '#FFFFFF'
+			text: 'Click to Start'
+
+			md_bg_color: '#344c4D'
+
+

@@ -1,0 +1,40 @@
+MDScreen:
+	id: matchview_screen
+	name: "matchview_screen"
+	md_bg_color: '#344c4D'
+	MDRelativeLayout:
+
+		size_hint: 1, 1
+		pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+		md_bg_color: '#344c4D'
+
+		MDBoxLayout:
+		
+			id: match_window
+			orientation: 'vertical'
+			size_hint: 1, 0.75
+		
+		MDBoxLayout:
+			orientation: 'horizontal'
+			
+			MDButton:
+				id:  previous_move
+				name: "previous_move"
+				md_bg_color: "#000000" 
+				pos_hint: {"center_x": 0.75, "center_y": 0.1}			
+				on_press: app.previous_preview()
+
+				MDButtonText:
+					text:  "previous"
+
+			MDButton:
+				id:  next_move
+				name: "next_move"
+				md_bg_color: "#000000" 
+				pos_hint: {"center_x": 0.25, "center_y": 0.1}			
+				on_press: app.next_preview()
+
+				MDButtonText:
+					text:  "next"
+
+			

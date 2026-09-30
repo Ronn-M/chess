@@ -1,0 +1,1713 @@
+<Player1Pomortionqueen>:
+	md_bg_color: "#FFD740" 
+	pos_hint: {"center_x": 0.3945, "center_y": 0.9}
+	size_hint: 0.075, 0.075
+	id: Player1queen
+	name: "pieces/queen-p1.png"
+	on_press: app.promote_pawn(self.name)
+	MDButtonIcon:
+		id: "pieces/queen-p1.png"
+		source: "pieces/queen-p1.png"
+
+<Player1Pomortionrook>:
+	md_bg_color: "#FFD740" 
+	pos_hint: {"center_x": 0.47950000000000004, "center_y": 0.9}
+	size_hint: 0.075, 0.075
+	id: Player1rook
+	name: "pieces/rook-p1.png"
+	on_press: app.promote_pawn(self.name)
+	MDButtonIcon:
+		id: "pieces/rook-p1.png"
+		source: "pieces/rook-p1.png"
+
+<Player1Pomortionbishop>:
+	md_bg_color: "#FFD740" 
+	pos_hint: {"center_x": 0.5645, "center_y": 0.9}
+	size_hint: 0.075, 0.075
+	id: Player1bishop
+	name: "pieces/bishop-p1.png"
+	on_press: app.promote_pawn(self.name)
+	MDButtonIcon:
+		id: "pieces/bishop-p1.png"
+		source: "pieces/bishop-p1.png"
+
+<Player1Pomortionknight>:
+	md_bg_color: "#FFD740" 
+	pos_hint: {"center_x": 0.6495, "center_y": 0.9}
+	size_hint: 0.075, 0.075
+	id: Player1knight
+	name: "pieces/knight-p1.png"
+	on_press: app.promote_pawn(self.name)
+	MDButtonIcon:
+		id: "pieces/knight-p1.png"
+		source: "pieces/knight-p1.png"
+
+<Player2Pomortionqueen>:
+	md_bg_color: "#FFD740" 
+	pos_hint: {"center_x": 0.3945, "center_y": 0.1}
+	size_hint: 0.075, 0.075
+	id: Player2queen
+	name: "pieces/queen-p2.png"
+	on_press: app.promote_pawn(self.name)
+	MDButtonIcon:
+		id: "pieces/queen-p2.png"
+		source: "pieces/queen-p2.png"
+
+<Player2Pomortionrook>:
+	md_bg_color: "#FFD740" 
+	pos_hint: {"center_x": 0.47950000000000004, "center_y": 0.1}
+	size_hint: 0.075, 0.075
+	id: Player2rook
+	name: "pieces/rook-p2.png"
+	on_press: app.promote_pawn(self.name)
+	MDButtonIcon:
+		id: "pieces/rook-p2.png"
+		source: "pieces/rook-p2.png"
+
+<Player2Pomortionbishop>:
+	md_bg_color: "#FFD740" 
+	pos_hint: {"center_x": 0.5645, "center_y": 0.1}
+	size_hint: 0.075, 0.075
+	id: Player2bishop
+	name: "pieces/bishop-p2.png"
+	on_press: app.promote_pawn(self.name)
+	MDButtonIcon:
+		id: "pieces/bishop-p2.png"
+		source: "pieces/bishop-p2.png"
+
+<Player2Pomortionknight>:
+	md_bg_color: "#FFD740" 
+	pos_hint: {"center_x": 0.6495, "center_y": 0.1}
+	size_hint: 0.075, 0.075
+	id: Player2knight
+	name: "pieces/knight-p2.png"
+	on_press: app.promote_pawn(self.name)
+	MDButtonIcon:
+		id: "pieces/knight-p2.png"
+		source: "pieces/knight-p2.png"
+
+<PlayerTradedPieceList>:
+	line_color: "#121212"
+	md_bg_color: "#121212"
+	size_hint: 0.075, 0.075
+	min_state_time: 0
+
+#:import get_color_from_hex kivy.utils.get_color_from_hex 
+MDScreen:
+	id: match_screen
+	name: "match_screen"
+	md_bg_color: '#344C4D'
+	MDRelativeLayout:
+		md_bg_color: '#344C4D'
+		size_hint:0.6, 0.7
+		pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+		MDBoxLayout:
+			orientation: 'vertical'
+
+			HorizontalLineP2: 
+
+				orientation: 'horizontal'
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: a8
+					name: "a8"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: a8_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: a8_image
+						size: "50sp", "50sp"
+						source: "pieces/rook-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: b8
+					name: "b8"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: b8_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: b8_image
+						size: "50sp", "50sp"
+						source: "pieces/knight-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: c8
+					name: "c8"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: c8_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: c8_image
+						size: "50sp", "50sp"
+						source: "pieces/bishop-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: d8
+					name: "d8"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: d8_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: d8_image
+						size: "50sp", "50sp"
+						source: "pieces/queen-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: e8
+					name: "e8"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: e8_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: e8_image
+						size: "50sp", "50sp"
+						source: "pieces/king-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: f8
+					name: "f8"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: f8_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: f8_image
+						size: "50sp", "50sp"
+						source: "pieces/bishop-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: g8
+					name: "g8"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: g8_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: g8_image
+						size: "50sp", "50sp"
+						source: "pieces/knight-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: h8
+					name: "h8"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: h8_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: h8_image
+						size: "50sp", "50sp"
+						source: "pieces/rook-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+			HorizontalLineP2p:
+
+				orientation: 'horizontal'
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: a7
+					name: "a7"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: a7_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: a7_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: b7
+					name: "b7"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: b7_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: b7_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: c7
+					name: "c7"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: c7_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: c7_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: d7
+					name: "d7"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: d7_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: d7_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: e7
+					name: "e7"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: e7_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: e7_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: f7
+					name: "f7"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: f7_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: f7_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: g7
+					name: "g7"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: g7_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: g7_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: h7
+					name: "h7"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: h7_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: h7_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p2.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+			HorizontalBox1:
+
+				orientation: 'horizontal'
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: a6
+					name: "a6"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: a6_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: a6_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: b6
+					name: "b6"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: b6_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: b6_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: c6
+					name: "c6"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: c6_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: c6_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: d6
+					name: "d6"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: d6_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: d6_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: e6
+					name: "e6"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: e6_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: e6_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: f6
+					name: "f6"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: f6_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: f6_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: g6
+					name: "g6"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: g6_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: g6_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: h6
+					name: "h6"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: h6_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: h6_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+
+
+			HorizontalBox2:
+
+				orientation: 'horizontal'
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: a5
+					name: "a5"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: a5_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: a5_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: b5
+					name: "b5"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: b5_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: b5_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: c5
+					name: "c5"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: c5_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: c5_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: d5
+					name: "d5"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: d5_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: d5_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: e5
+					name: "e5"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: e5_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: e5_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: f5
+					name: "f5"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: f5_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: f5_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: g5
+					name: "g5"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: g5_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: g5_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: h5
+					name: "h5"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: h5_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: h5_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+
+
+			HorizontalBox3:
+
+				orientation: 'horizontal'
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: a4
+					name: "a4"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: a4_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: a4_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: b4
+					name: "b4"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: b4_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: b4_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: c4
+					name: "c4"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: c4_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: c4_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: d4
+					name: "d4"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: d4_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: d4_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: e4
+					name: "e4"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: e4_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: e4_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: f4
+					name: "f4"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: f4_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: f4_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: g4
+					name: "g4"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: g4_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: g4_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: h4
+					name: "h4"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: h4_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: h4_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+
+
+			HorizontalBox4:
+
+				orientation: 'horizontal'
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: a3
+					name: "a3"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: a3_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: a3_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: b3
+					name: "b3"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: b3_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: b3_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: c3
+					name: "c3"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: c3_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: c3_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: d3
+					name: "d3"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: d3_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: d3_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: e3
+					name: "e3"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: e3_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: e3_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: f3
+					name: "f3"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: f3_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: f3_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: g3
+					name: "g3"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: g3_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: g3_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: h3
+					name: "h3"
+					on_press:
+						app.update_board(self.name)
+					MDButtonIcon:
+						id: h3_overlay
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+					MDButtonIcon:
+						id: h3_image
+						source: "pieces/tempbg.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+
+
+			HorizontalLineP1p:
+
+				orientation: 'horizontal'
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: a2
+					name: "a2"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: a2_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: a2_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: b2
+					name: "b2"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: b2_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: b2_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: c2
+					name: "c2"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: c2_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: c2_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: d2
+					name: "d2"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: d2_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: d2_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: e2
+					name: "e2"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: e2_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: e2_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: f2
+					name: "f2"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: f2_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: f2_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: g2
+					name: "g2"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: g2_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: g2_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: h2
+					name: "h2"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: h2_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: h2_image
+						size: "50sp", "50sp"
+						source: "pieces/pawn-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+			HorizontalLineP1: 
+
+				orientation: 'horizontal'
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: a1
+					name: "a1"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: a1_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: a1_image
+						size: "50sp", "50sp"
+						source: "pieces/rook-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: b1
+					name: "b1"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: b1_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: b1_image
+						size: "50sp", "50sp"
+						source: "pieces/knight-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: c1
+					name: "c1"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: c1_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: c1_image
+						size: "50sp", "50sp"
+						source: "pieces/bishop-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: d1
+					name: "d1"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: d1_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: d1_image
+						size: "50sp", "50sp"
+						source: "pieces/queen-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: e1
+					name: "e1"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: e1_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: e1_image
+						size: "50sp", "50sp"
+						source: "pieces/king-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: f1
+					name: "f1"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: f1_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: f1_image
+						size: "50sp", "50sp"
+						source: "pieces/bishop-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_ii:
+
+					canvas.before:
+						Color:
+
+							rgba: get_color_from_hex("#000000")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: g1
+					name: "g1"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: g1_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: g1_image
+						size: "50sp", "50sp"
+						source: "pieces/knight-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+				Square_i:
+					canvas.before:
+						Color:
+							rgba: get_color_from_hex("#FFFFFF")
+						Rectangle:
+							pos: (0.5, 0.5)
+							size: self.size
+
+					size_hint: 1, 1
+					id: h1
+					name: "h1"
+					on_press:
+						app.update_board(self.name)
+
+					MDButtonIcon:
+						id: h1_overlay
+						size: "50sp", "50sp"
+						source: ""
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+					MDButtonIcon:
+						id: h1_image
+						size: "50sp", "50sp"
+						source: "pieces/rook-p1.png"
+						pos_hint: {"center_x": 0.5, "center_y": 0.5}

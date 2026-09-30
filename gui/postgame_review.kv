@@ -1,0 +1,47 @@
+MDScreen:
+
+	id: match_recap
+	name: "match_recap"
+	md_bg_color: '#344c4D'
+	
+	MDRelativeLayout:
+		size_hint:0.6, 0.7
+		pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+		MDLabel:
+			pos_hint: {"center_x": 0.5, "center_y": 0.9}
+			text: '****Check Mate****'
+		
+		MDButton:
+			id:  previous_match
+			name: "previous_match"
+			size_hint: 0.1, 0.1
+			md_bg_color: "#000000" 
+			pos_hint: {"center_x": 0.15, "center_y": 0.5}			
+			on_press: app.reload_previous_match()
+
+			MDButtonText:
+				text:  "Reload Previous match"
+		
+		MDButton:
+			id:  rematch
+			name: "rematch"
+			size_hint: 0.1, 0.1
+			md_bg_color: "#000000" 
+			pos_hint: {"center_x": 0.5, "center_y": 0.5}			
+			on_press: app.rematch()
+
+			MDButtonText:
+				text:  "Rematch"
+
+		MDButton:
+			id:  newmatch
+			name: "newmatch"
+			size_hint: 0.1, 0.1
+			md_bg_color: "#000000" 
+			pos_hint: {"center_x": 0.85, "center_y": 0.5}
+			on_press: app.player_select()
+			
+			MDButtonText:
+				text:  "New Match"
+			

@@ -1,0 +1,1 @@
+Image objects will be handled internally instead of a directory/folder on the next update 
