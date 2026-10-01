@@ -1,6 +1,5 @@
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.boxlayout import MDBoxLayout
-from kivymd.uix.responsivelayout import MDResponsiveLayout
 from kivymd.uix.button.button import MDExtendedFabButton
 
 class TabletView(MDScreen): pass

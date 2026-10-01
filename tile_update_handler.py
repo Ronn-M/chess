@@ -1,9 +1,10 @@
 from logging import log
-from kivy.uix.widget import Widget
-from kivymd.uix.button.button import MDExtendedFabButtonIcon
 from queue import Queue
 
-from device_views import PlayerTradedPieceList 
+from kivy.uix.widget import Widget
+from kivymd.uix.button.button import MDExtendedFabButtonIcon
+
+from ui_assets import PlayerTradedPieceList 
 
 class TileHandler:
     def __init__(self, screen: Widget, _activated_tiles: Queue[set[str]], _verified_tiles: set[str]) -> None:

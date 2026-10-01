@@ -177,7 +177,8 @@ class GenerateBoard:
         def viewset(sizel: str, sizew: str, posx: str, posy: str):
             return str(add_lines_and_tabs(1, 1) + 'MDRelativeLayout:' + add_lines_and_tabs(1, 2) + "md_bg_color: '#344C4D'" + add_lines_and_tabs(1, 2) + 'size_hint:' + sizel + ', ' + sizew + add_lines_and_tabs(1, 2) + 
                        "pos_hint: {'center_x': " + posx + ", 'center_y': " + posy + '}' + add_lines_and_tabs(1, 2) + 'MDBoxLayout:' + add_lines_and_tabs(1, 3) + "orientation: 'vertical'" + add_lines_and_tabs(1) )
-        
+
+        # this will be managed through os environments on stable version release
         #view_set_mv = viewset('0.8', '0.4', '0.5', '0.5')     
         view_set_tv = viewset('0.6', '0.7', '0.5', '0.5')    
         #view_set_dv = viewset('0.4', '0.6', '0.5', '0.5')  

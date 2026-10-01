@@ -1,17 +1,27 @@
-from utils import utils
+# builtin modules
+from logging import log
+from queue import Queue
+
+# kivy modules
+from kivy import require
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager
 from kivy.uix.widget import Widget
-from kivymd.app import MDApp
-from queue import Queue
-from logging import log
 
+# kivymd modules
+from kivymd.app import MDApp
+
+# local modules
+import ui_assets
 from board_generator import GenerateBoard
-from tile_update_handler import TileHandler
 from move_filter import MoveFilter
 from piece_config import PieceMovement 
 from tile_manager import TileMapper, CheckHandler
-import device_views
+from tile_update_handler import TileHandler
+from utils import utils
+
+# kivy version requirement
+require('2.3.1')
 
 class pyChessGame(MDApp):
  
@@ -551,15 +561,15 @@ class pyChessGame(MDApp):
         self.promotion_data.put(_current_location)
 
         if _piece_details[1] == 'p1':
-            activate_promotions(device_views.Player1PomortionRook(), 
-                                device_views.Player1PomortionQueen(), 
-                                device_views.Player1PomortionKnight(), 
-                                device_views.Player1PomortionBishop())
+            activate_promotions(ui_assets.Player1PomortionRook(), 
+                                ui_assets.Player1PomortionQueen(), 
+                                ui_assets.Player1PomortionKnight(), 
+                                ui_assets.Player1PomortionBishop())
         elif _piece_details[1] == 'p2':    
-            activate_promotions(device_views.Player2PomortionRook(), 
-                                device_views.Player2PomortionQueen(), 
-                                device_views.Player2PomortionKnight(), 
-                                device_views.Player2PomortionBishop())
+            activate_promotions(ui_assets.Player2PomortionRook(), 
+                                ui_assets.Player2PomortionQueen(), 
+                                ui_assets.Player2PomortionKnight(), 
+                                ui_assets.Player2PomortionBishop())
 
     # buggy feature    
     def match_recap(self: MDApp, *args: str) -> None: 
